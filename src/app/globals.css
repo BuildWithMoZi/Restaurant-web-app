@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette (requested) */
+  --brand-primary: #fff1d9; /* off-yellow cream */
+  --brand-secondary: #264e7a; /* deep blue */
+  --brand-secondary-2: #942121; /* cherry red */
+  --brand-secondary-3: #ffffff; /* white */
+
+  /* Core surfaces/text (light default) */
+  --background: var(--brand-primary);
+  --foreground: #0b1a2a;
+  --muted-foreground: color-mix(in oklab, var(--foreground), transparent 40%);
+  --card: color-mix(in oklab, var(--brand-secondary-3), transparent 6%);
+  --border: color-mix(in oklab, var(--brand-secondary), transparent 78%);
+
+  /* Effects */
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.12);
+  --shadow-float: 0 28px 70px rgba(0, 0, 0, 0.16);
+  --ring: color-mix(in oklab, var(--brand-secondary), transparent 60%);
+}
+
+@theme inline {
+  /* Tailwind v4 theme tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--brand-primary);
+  --color-secondary: var(--brand-secondary);
+  --color-secondary-2: var(--brand-secondary-2);
+  --color-secondary-3: var(--brand-secondary-3);
+
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-ring: var(--ring);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-float: var(--shadow-float);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #070d14;
+    --foreground: #f6f3ea;
+    --muted-foreground: color-mix(in oklab, var(--foreground), transparent 42%);
+    --card: color-mix(in oklab, #0b1420, transparent 0%);
+    --border: color-mix(in oklab, var(--brand-primary), transparent 82%);
+    --ring: color-mix(in oklab, var(--brand-primary), transparent 65%);
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(
+      1200px 700px at 30% 10%,
+      color-mix(in oklab, var(--brand-secondary), transparent 86%),
+      transparent 70%
+    ),
+    radial-gradient(
+      900px 600px at 80% 20%,
+      color-mix(in oklab, var(--brand-secondary-2), transparent 90%),
+      transparent 72%
+    ),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji";
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--brand-secondary), transparent 75%);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, "Times New Roman", serif;
+}
+
+/* Smooth anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Section layout + zebra surfaces (post-hero) */
+.section-shell {
+  position: relative;
+  scroll-margin-top: 7rem;
+  overflow: hidden;
+  border-top: 1px solid color-mix(in oklab, var(--border), transparent 40%);
+  padding-block: 5rem;
+}
+
+@media (min-width: 640px) {
+  .section-shell {
+    padding-block: 7rem;
+  }
+}
+
+.section-surface-bright {
+  background:
+    radial-gradient(
+      ellipse 110% 75% at 50% -15%,
+      color-mix(in oklab, var(--brand-primary), white 22%),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 85% 30%,
+      color-mix(in oklab, var(--brand-secondary), transparent 92%),
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--brand-primary), white 10%) 0%,
+      var(--brand-primary) 42%,
+      color-mix(in oklab, var(--brand-primary), var(--brand-secondary) 5%) 100%
+    );
+}
+
+.section-overlay-bright {
+  background: radial-gradient(
+    ellipse 85% 55% at 50% 0%,
+    color-mix(in oklab, var(--brand-secondary), transparent 94%),
+    transparent 72%
+  );
+}
+
+.section-overlay-muted {
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 0%,
+    color-mix(in oklab, var(--brand-secondary), transparent 92%),
+    transparent 70%
+  );
+}
+
+/* Decorative layer — never blocks interaction */
+.decor-layer {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Hide scrollbars but keep scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-gentle {
+    animation: none;
+  }
+}
+
+/* Hero cinematic background */
+.hero-bg {
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 70% 20%,
+      color-mix(in oklab, var(--brand-secondary), transparent 55%),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 15% 80%,
+      color-mix(in oklab, var(--brand-secondary-2), transparent 82%),
+      transparent 70%
+    ),
+    linear-gradient(
+      165deg,
+      color-mix(in oklab, var(--brand-primary), #fff 8%) 0%,
+      var(--brand-primary) 45%,
+      color-mix(in oklab, var(--brand-primary), var(--brand-secondary) 6%) 100%
+    );
+}
+
+.hero-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+.animate-scroll-hint {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-hint {
+    animation: none;
+  }
+}
