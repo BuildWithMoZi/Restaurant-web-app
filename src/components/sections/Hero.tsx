@@ -13,6 +13,7 @@ import { OliveBranch } from "@/components/decor/BotanicalSprites";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
+import { assetPath } from "@/lib/asset-path";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -65,7 +66,7 @@ function HeroImageTile({
       variants={imageReveal}
       className={`group relative overflow-hidden rounded-2xl border border-border/70 shadow-[var(--shadow-soft)] sm:rounded-3xl ${className ?? ""}`}>
       <Image
-        src={src}
+        src={assetPath(src)}
         alt={alt}
         fill
         priority={priority}
@@ -140,7 +141,7 @@ export function Hero() {
         className='pointer-events-none absolute inset-0 opacity-[0.14]'
         aria-hidden>
         <Image
-          src={mainImage.src}
+          src={assetPath(mainImage.src)}
           alt=''
           fill
           priority

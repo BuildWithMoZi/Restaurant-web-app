@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
+import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -27,8 +28,8 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://lucious-restaurant.example",
   ),
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: assetPath("/logo.png"),
+    apple: assetPath("/logo.png"),
   },
   openGraph: {
     title: site.name,
@@ -36,13 +37,20 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: site.shortName,
-    images: [{ url: "/logo.png", width: 512, height: 512, alt: site.name }],
+    images: [
+      {
+        url: assetPath("/logo.png"),
+        width: 512,
+        height: 512,
+        alt: site.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.name,
     description: site.description,
-    images: ["/logo.png"],
+    images: [assetPath("/logo.png")],
   },
 };
 

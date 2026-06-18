@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/Section";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/lib/site";
+import { assetPath } from "@/lib/asset-path";
 
 function FeatureIcon({ icon }: { icon: string }) {
   const cls = "h-6 w-6 text-secondary";
@@ -119,7 +120,7 @@ export function About() {
               >
                 <div className="relative aspect-square bg-[linear-gradient(135deg,var(--brand-primary)_0%,color-mix(in_oklab,var(--brand-secondary),transparent_25%)_100%)] p-5">
                   <Image
-                    src="/logo.png"
+                    src={assetPath("/logo.png")}
                     alt=""
                     width={72}
                     height={72}

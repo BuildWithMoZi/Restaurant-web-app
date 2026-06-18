@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 
 type BlendMode = "normal" | "multiply" | "screen";
 
@@ -34,7 +35,7 @@ export function HangingPlantImage({
   return (
     <div className={`pointer-events-none select-none ${className}`}>
       <Image
-        src={src}
+        src={assetPath(src)}
         alt={alt}
         width={width}
         height={height}

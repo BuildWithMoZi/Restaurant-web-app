@@ -2,16 +2,20 @@ import type { NextConfig } from "next";
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+const basePath = isGitHubPages && repoName ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
   ...(isGitHubPages
     ? {
         output: "export",
-        basePath: repoName ? `/${repoName}` : "",
-        assetPrefix: repoName ? `/${repoName}/` : "",
+        basePath,
+        assetPrefix: basePath ? `${basePath}/` : "",
         trailingSlash: true,
       }
     : {}),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: isGitHubPages,
     remotePatterns: [

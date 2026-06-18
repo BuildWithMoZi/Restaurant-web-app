@@ -5,6 +5,7 @@ import { OliveBranch } from "@/components/decor/BotanicalSprites";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { footerNav } from "@/lib/navigation";
+import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
 
 function SocialIcon({
@@ -44,7 +45,7 @@ export function Footer() {
           <div className="space-y-5">
             <Link href="#home" className="inline-flex items-center gap-3">
               <Image
-                src="/logo.png"
+                src={assetPath("/logo.png")}
                 alt={site.name}
                 width={56}
                 height={56}

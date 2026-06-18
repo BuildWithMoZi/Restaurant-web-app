@@ -40,13 +40,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
+| Command             | Description                                |
+| ------------------- | ------------------------------------------ |
+| `npm run dev`       | Start development server                   |
 | `npm run dev:clean` | Clear `.next` cache, then start dev server |
-| `npm run build` | Production build |
-| `npm run start` | Serve production build |
-| `npm run lint` | Run ESLint |
+| `npm run build`     | Production build                           |
+| `npm run start`     | Serve production build                     |
+| `npm run lint`      | Run ESLint                                 |
 
 ## Project Structure
 
@@ -91,12 +91,12 @@ Menu and dish content lives in `src/data/`:
 
 Current hero assets in `public/hero/`:
 
-| File | Used for |
-|------|----------|
+| File             | Used for                    |
+| ---------------- | --------------------------- |
 | `terrace-v1.jpg` | Sunset Terrace (large tile) |
-| `seafood-v1.png` | Restaurant entrance |
-| `mezze-v1.png` | Food menu cover |
-| `plating-v1.jpg` | Chef plating (wide tile) |
+| `seafood-v1.png` | Restaurant entrance         |
+| `mezze-v1.png`   | Food menu cover             |
+| `plating-v1.jpg` | Chef plating (wide tile)    |
 
 Update paths in `site.ts` when replacing images. Prefer `.png` for graphics with text; use `.jpg` for photographs.
 
@@ -125,18 +125,16 @@ Static files are output to `out/`.
 
 Before deploying, set `NEXT_PUBLIC_SITE_URL` to your production domain (see `.env.example`).
 
-### GitHub push
+### GitHub Pages setup (important)
 
-```bash
-git init
-git add .
-git commit -m "Initial commit: Lucious restaurant site"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
-```
+1. Push code to GitHub
+2. Go to **Settings → Pages → Build and deployment**
+3. Set **Source** to **GitHub Actions** (NOT “Deploy from branch /docs”)
+4. Push to `main` — the **Deploy to GitHub Pages** workflow runs automatically
 
-Run these commands from the project root (`my-app/` folder when pushed as the repo).
+If Pages is set to `/docs` folder, Jekyll will fail and images will 404. Always use **GitHub Actions**.
+
+Site URL: `https://YOUR_USERNAME.github.io/YOUR_REPO/`
 
 ## License
 
