@@ -23,7 +23,9 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.shortName,
-  metadataBase: new URL("https://mykonos-restaurant.example"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://lucious-restaurant.example",
+  ),
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",

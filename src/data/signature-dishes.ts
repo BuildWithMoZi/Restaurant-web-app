@@ -49,7 +49,7 @@ export const signatureDishes: SignatureDish[] = [
   },
   {
     id: "lamb-chops",
-    name: "Mykonos Herb Lamb Chops",
+    name: "Lucious Herb Lamb Chops",
     description:
       "Rosemary-crusted lamb with roasted garlic jus and crushed potatoes.",
     price: "$42",

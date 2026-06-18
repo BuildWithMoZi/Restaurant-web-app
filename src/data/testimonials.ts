@@ -13,7 +13,7 @@ export const testimonials: Testimonial[] = [
     name: "Aanya Kapoor",
     title: "Anniversary Dinner",
     quote:
-      "The terrace felt like Mykonos at sunset — every plate arrived like a small ceremony. The octopus was perfection, and the service was quietly flawless.",
+      "The terrace felt like Lucious at sunset — every plate arrived like a small ceremony. The octopus was perfection, and the service was quietly flawless.",
     rating: 5,
     highlight: true,
   },

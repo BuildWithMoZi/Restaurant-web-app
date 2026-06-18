@@ -13,7 +13,7 @@ const copy = {
   eyebrow: "Gallery",
   title: "A cinematic glimpse into our world.",
   description:
-    "From sunset terrace moments to artful plating — explore the ambience that makes Mykonos unforgettable.",
+    "From sunset terrace moments to artful plating — explore the ambience that makes Lucious unforgettable.",
 };
 
 function Lightbox({

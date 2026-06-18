@@ -151,7 +151,7 @@ export const fullMenu: MenuSection[] = [
       },
       {
         id: "mains-lamb-chops",
-        name: "Mykonos Herb Lamb Chops",
+        name: "Lucious Herb Lamb Chops",
         description: "Rosemary crust, roasted garlic jus, crushed potatoes.",
         price: "$42",
         tags: ["gluten-free"],

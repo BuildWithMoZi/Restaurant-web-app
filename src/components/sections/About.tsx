@@ -100,7 +100,7 @@ export function About() {
                       {about.years}
                     </span>
                     <p className="font-display text-3xl text-secondary-3">
-                      The Mykonos Experience
+                      The Lucious Experience
                     </p>
                     <p className="mt-2 text-sm text-secondary-3/75">
                       Terrace • Cellar • Open Kitchen

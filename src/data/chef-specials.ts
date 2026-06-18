@@ -68,7 +68,7 @@ export const chefSpecials: ChefSpecial[] = [
   },
   {
     id: "cocktail-spritz",
-    name: "Mykonos Sunset Spritz",
+    name: "Lucious Sunset Spritz",
     description: "Citrus aperitif, sparkling wine, olive leaf, sea breeze.",
     price: "$16",
     course: "cocktail",
