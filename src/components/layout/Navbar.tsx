@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { mainNav } from "@/lib/navigation";
+import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
 import { NavbarPlantDecor } from "@/components/decor/NavbarPlantDecor";
 import { Button } from "@/components/ui/Button";
@@ -57,7 +58,7 @@ export function Navbar() {
                 className='group flex shrink-0 items-center gap-3'
                 onClick={closeMobile}>
                 <Image
-                  src='/logo.png'
+                  src={assetPath("/logo.png")}
                   alt={site.name}
                   width={48}
                   height={48}
